@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet"href="nav.css">
+	<title></title>
+	<style type="text/css">
+		#container{width:800px;margin:0 auto;
+			display: grid;
+			grid-template-columns: 200px 1fr 1fr;
+			grid-auto-rows:70px;
+			grid-row-gap: 1em;
+			align-items: center;}
+
+ 		
+		.text{padding:10px; width:45%;}
+		span.errors{display:none;}
+		div.results{width:800px;margin:0 auto;display: grid;grid-auto-rows:auto;}
+		#addresss{
+			text-align: left;
+			height:50px;
+			width: 200px;
+		}
+	</style>
+	<script type="text/javascript">
+		function load(){
+	var from = document.getElementById("from0");
+	var dear = document.getElementById("dear0");
+	var who = document.getElementById("who0");
+	var name =document.getElementById("name0");
+	var age = document.getElementById("age0");
+	var day = document.getElementById("day0");
+	var date = document.getElementById("date0");
+	var time = document.getElementById("time0");
+	var addresss =document.getElementById("address0");
+
+			from.value=localStorage.getItem("from4");
+			dear.value=localStorage.getItem("dear4");
+			who.value=localStorage.getItem("who4");
+			name.value=localStorage.getItem("name4");
+			age.value=localStorage.getItem("age4");
+			day.value=localStorage.getItem("day4");
+			date.value=localStorage.getItem("date4");
+			time.value=localStorage.getItem("time4");
+			addresss.value=localStorage.getItem("address4");
+		}
+		
+		
+		function checkFom(){
+			var from = document.getElementById("from0");
+	var dear = document.getElementById("dear0");
+	var who = document.getElementById("who0");
+	var name =document.getElementById("name0");
+	var age = document.getElementById("age0");
+	var day = document.getElementById("day0");
+	var date = document.getElementById("date0");
+	var time = document.getElementById("time0");
+	var addresss =document.getElementById("address0");
+
+
+	// var result = document.getElementById("result");
+	// var resul = document.getElementById("resul");
+	// var address = document.getElementById("addresss");
+	// var res = document.getElementById("res");
+	// var dears = document.getElementById("dears");
+	localStorage.setItem("from0",from.value);
+	localStorage.setItem("dear0",dear.value);
+	localStorage.setItem("who0",who.value);
+	localStorage.setItem("name0",name.value);
+	localStorage.setItem("age0",age.value);
+	localStorage.setItem("day0",day.value);
+	localStorage.setItem("date0",date.value);
+	localStorage.setItem("time0",time.value);
+	localStorage.setItem("address0",addresss.value);
+
+
+	
+	
+	
+	
+	// result.innerHTML =firstname.value+" is turning "+age.value+"!";
+	// resul.innerHTML = day.value+" "+date.value+" "+time.value;
+	
+
+
+		}
+	</script>
+</head>
+<body>
+<div id="left">
+
+<div id="container">
+	
+<header style="grid-row: 1;grid-column: 1/4"><h1 >Design your Birthday card</h1></header>
+
+<label for="greating" style="grid-column:1/2">From: </label>
+<input type="text" name="greating" id="from0" class="text" style="grid-column:2/4">
+
+<label for="dear" style="grid-column:1/2">Dear</label>
+<!-- <input type="text" name="who" id="who" class="text" style="grid-column:2/4"> -->
+<select id="dear0">
+				<option value="Mr "selected="">Mr</option>
+				<option value="Ms ">Ms</option>
+				<option value="Mrs ">Mrs</option>
+				<option value="Sir ">Sir</option>
+				<option value="Madam">Madam</option>
+			</select>
+
+<label for="who" style="grid-column:1/2">To who</label>
+<input type="text" name="who" id="who0" class="text" style="grid-column:2/4">
+
+
+<label for="name" style="grid-column:1/2">Birthday name </label>
+<input type="text" name="name" id="name0" class="text" style="grid-column:2/4">
+
+
+<label for="age" style="grid-column:1/2">Age will be</label>
+<input type="number" name="age" id="age0" class="text" style="grid-column:2/4">
+
+<label for="day" style="grid-column:1/2">Day</label>
+<input type="text" name="day" id="day0" class="text" style="grid-column:2/4">
+<label for="date">Date</label>
+		<input type="date" name="date" id="date0" class="text"style="grid-column:2/4">
+		
+		<label for="time">Time</label>
+		<input type="time" name="time" id="time0" class="text"style="grid-column:2/4">
+		
+
+<label>Address</label>
+<textarea rows="4" cols="20" id="address0"></textarea>
+
+
+<button onclick="load()" style="grid-column:1/2; width:20%" >load</button>
+<button style="grid-column:2/2;width:20%" onclick="checkFom()"><a href="corporate_one.html">Preview</a></button>
+<!-- <input type="reset" name="reset" value="Clear"style="grid-column:3/4;width:50%"> -->
+
+</div>
+</div></div>
+</body>
+</html>

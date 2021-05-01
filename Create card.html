@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+	<link rel="stylesheet"href="nav.css">
+	<title></title>
+	<style type="text/css">
+		body{
+			background-color:  #87cefa;
+		}
+		main{
+			margin-top: 10vh;
+			display:grid;
+			text-align: center;
+			grid-template-columns:repeat(2,1fr);
+			grid-template-rows:repeat(2,60vh);
+			grid-gap: 1em;
+			grid-template-areas: 
+			"corporate formal "
+			"informal custom";
+			background-color: #87cefa;
+		}
+		img{
+			height: 79%;
+			width: 100%;
+		}
+		
+		
+		ul li{
+			padding:1px 20px 1px 20px;
+			border: 2px solid black;
+			background-color: #AFEEEE;
+		}
+
+		
+		#cor{
+			grid-area:corporate;
+			background-color: aquamarine;
+			border:1px solid black;
+
+
+		}
+		#for{
+			grid-area:formal;
+			background-color: aquamarine;
+			border:1px solid black;
+
+		}
+		#inf{
+			grid-area:informal;
+			background-color:aquamarine;
+			border:1px solid black;
+
+		}
+		#cus{
+			grid-area:custom;
+			background-color:aquamarine;
+			border:1px solid black;
+
+		}
+		a:hover {
+	  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.7);
+	}
+	@media screen and (max-width: 860px){
+		main{
+			/*margin-top: 10vh;
+			display:grid;
+			text-align: center;*/
+			grid-template-columns:1fr;
+			grid-template-rows:repeat(4,60vh);
+			grid-gap: 1em;
+			grid-template-areas: 
+			'corporate'
+			'formal'
+			'informal'
+			'custom'
+			;
+			background-color:#87cefa;
+		}
+		
+	</style>
+</head>
+<body>
+<header>
+<nav class="navbar">
+		<div class="navbar_container">
+			<a href="index.html"id="navbar_logo">Category of Card</a>
+		<div class="navbar_toggle" id="mobile-menu">
+			<span class="bar"> </span><span class="bar"> </span><span class="bar"> </span>
+		</div>
+		<ul class="navbar_menu">
+			<a href="index.html"><li class="navbar_item">Home</li></a>
+			<a href="Create card.html"><li class="navbar_item">Cards</li></a>
+			<a href=""><li class="navbar_item">Favorite</li></a>
+			<a href="about.html"><li class="navbar_item">About</li></a>
+		</ul>
+		</div>
+	</nav>
+</header>
+<main>
+	<a id="cor"href="corporate_choose_lay.html"><div >corporate</div><img src="../../assets/images/v-1.jpg"></a>
+	<a id="for" href="formal_Choose_lay.html"><div >formal</div></a>
+	<a id="inf" href="informal_C_lay.html "><div >informal</div></a>
+	<a id="cus" href="custom.html "><div >custom your own card</div></a>
+
+
+</main>
+<script type="text/javascript">
+		const menu =document.querySelector('#mobile-menu');
+		const menuLinks = document.querySelector('.navbar_menu');
+		menu.addEventListener('click',function(){
+			menu.classList.toggle('is-active');
+			menuLinks.classList.toggle('active');
+		});
+	</script>
+</body>
+</html>

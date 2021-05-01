@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Arial&family=Antonio&family=Dancing+Script&family=Sofia&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@100&family=Bodoni+Moda&family=EB+Garamond&display=swap" rel="stylesheet">
+	<style type="text/css">
+
+		*{
+			margin:0;
+			padding:0;
+		}
+		body{
+			display: grid;
+			grid-template-columns:80% 20%;
+			background-color:#87cefa; 
+			grid-template-areas:
+			'lefts rights';
+		}
+		.container{
+			width: 100%;
+			height:100vh;
+			background:#87cefa; ;
+			background-size: cover;
+			display:flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.card{
+			width:450px;
+			height: 660px;
+			background-color: #eee;
+			/*position: absolute;*/
+			/*perspective: 1000px;*/
+		}
+		.inside{
+			
+			width:450px;
+			height: 660px;
+			background-color: #eee;
+
+			position: absolute;
+			perspective: 1000px;
+		}
+		#back-side{
+			/*position:absolute;*/
+			justify-content: center;
+			
+			margin:0 auto;
+			width: 100%;
+			height: 100%;
+			background-color: chocolate;
+			}
+			
+		
+		/*.fill{*/
+			/*background-image: url("../../assets/images/v-1.jpg");*/
+			/*position:relative;*/
+			/*height:150px;
+			width:150px;
+			top:5px;
+			left:5px;
+			cursor:pointer;
+		}*/
+		/*.empty{
+			display:inline-block;
+			height: 160px;
+			width: 160px;
+			margin:10px;
+			border:3px salmon solid;
+			background-color: white;
+		}
+		.hold{
+			border:solid #ccc 4px;
+		}
+		.hovered{
+			background:#f4f4f4;
+			border-style: dashed;
+		}
+		.invisible{
+			display: none;
+		}
+		.empty
+{float:left; width:140px; height:55px; margin:10px;padding:10px;border:1px solid #aaaaaa;}
+*/
+img{
+	width:100%;
+	height: 100%;
+}
+
+	#left{
+		grid-area:lefts;
+	}
+	#right{
+		grid-area:rights;
+		display: grid;
+			grid-template-columns:50% 50%;
+			grid-template-rows: repeat(9,8vh);
+			grid-template-areas: 
+			"fon fon"
+			"bodoni eb"
+			"atonio arial"
+			"roman roman"
+			"col col"
+			"reds blues"
+			"greens greys"
+			"golds purples"
+			"whites whites"
+			"back save"
+			"submit submit";
+		}
+		#red {
+			grid-area:reds;
+		}
+			#blue {
+			grid-area:blues;
+		}
+		#green {
+			grid-area:greens;
+		}
+		#grey {
+			grid-area:greys;
+		}
+		#gold {
+			grid-area:golds;
+		}
+		#purple{
+			grid-area:purples;
+		}
+		#white{
+			grid-area: whites;
+		}
+		#bodoni {
+			grid-area: bodoni;
+		}
+		#eb{
+			grid-area: eb;
+		}
+		#atonio{
+			grid-area: atonio;
+		}
+		#arial{
+			grid-area: arial;
+		}
+		#roman{
+			grid-area: roman;
+		}
+		#col{
+			grid-area: col;
+			text-align: center;
+		}
+		#fon{
+			grid-area: fon;
+			text-align: center;
+		}
+		#save{
+			grid-area: save;
+		}
+		#submit{
+			grid-area: submit;
+		}
+		#back{
+			grid-area: back;
+		}
+	/*.zero{
+		height: 200px;
+		width: 50px;
+		border:solid 1px black;
+	}*/
+	/*#pos{
+		position: absolute;
+		padding-left: 30px;
+		padding-right: 20px;
+		margin:10% 10%;
+		
+	}*/
+	#pos{
+		position: absolute;
+		margin:15% 0 0 15%;
+		width: 70%;
+	}
+	
+	.but{
+		width: 100%;
+	}
+	/*#pos{
+		display:grid;
+		grid-template-columns:1fr ;
+		grid-template-rows:repeat(2,1fr);
+		grid-template-areas: 
+		"name"
+		"birth";
+	}*/
+	/*#dear1{
+		grid-area:name;
+		padding-top: 150px;
+		
+	}
+	#birth{
+		grid-area:birth;
+		padding-top: 40px;
+	}
+	#name1{
+		padding-top: 200px;
+	}
+	#time1{
+		padding-top: 300px;
+	}*/
+	/*#address1{
+		padding-left:20px;	}*/
+	button,  .choose, #backs{
+		width:100%;
+		height: 70%;
+		text-align: center;
+	}
+	.tes, textarea{
+		background: transparent;
+		border:none;
+		text-align: center;
+		font-size: 18.72px;
+		font-weight: bold;
+	}
+	/*h1=32px
+	h2=24px
+	h3=18.72px
+	h4=16px*/
+
+		
+	</style>
+	<script type="text/javascript">
+// 		let colorPicker = document.getElementById("colorPicker");
+// let box = document.getElementById("container");
+// let output = document.getElementById("output");
+// let text = document.getElementById("label");
+
+// text.style.color = colorPicker.value;
+// text.style.backgroundColor = colorPicker.value;
+// box.style.backgroundColor = colorPicker.value;
+function change(fontName) {
+
+  var list = document.getElementsByClassName("abs");
+
+  for (i = 0; i < list.length; ++i) {
+    list[i].style.fontFamily = fontName;
+  }
+}
+function font(value){
+		var out =document.getElementById("back-side");
+		if(value==1){
+			out.style.fontFamily="Bodoni Moda";
+		}
+		else if(value==2){
+			out.style.fontFamily="EB Garamond";
+		}
+		else if(value==3){
+			out.style.fontFamily="Antonio";
+		}
+		else if(value==4){
+			out.style.fontFamily="Arial";
+		}
+		else if(value==5){
+			out.style.fontFamily="Times New Roman";
+		}
+	}
+
+	function load(){
+		
+		var birth1=document.getElementById("birth1");
+		var great1 = document.getElementById("greating1");
+		var dear1 = document.getElementById("dear1");
+		var who1 = document.getElementById("who1");
+		var name1 =document.getElementById("name1");
+		var age1 = document.getElementById("age1");
+		var day1 = document.getElementById("day1");
+		var date1 = document.getElementById("date1");
+		var time1 = document.getElementById("time1");
+		var address1 =document.getElementById("address1");
+
+		dear1.value=localStorage.getItem("dear");
+	who1.value=localStorage.getItem("who");
+	great1.value=localStorage.getItem("greating");
+	name1.value=localStorage.getItem("name");
+	secname.value=localStorage.getItem("name");
+	
+	age1.value=localStorage.getItem("age");
+	day1.value=localStorage.getItem("day");
+	date1.value=localStorage.getItem("date");
+	time1.value=localStorage.getItem("time");
+	address1.value=localStorage.getItem("address");
+
+	}
+	function save(){
+		var birth1 =document.getElementById("birth1");
+		var great1 = document.getElementById("greating1");
+		var dear1 = document.getElementById("dear1");
+		var who1 = document.getElementById("who1");
+		var name1 =document.getElementById("name1");
+		var age1 = document.getElementById("age1");
+		var day1 = document.getElementById("day1");
+		var date1 = document.getElementById("date1");
+		var time1 = document.getElementById("time1");
+		var address1 =document.getElementById("address1");
+
+		localStorage.setItem("greating1",great1.value);
+		localStorage.setItem("dear1",dear1.value);
+		localStorage.setItem("who1",who1.value);
+		localStorage.setItem("name1",name1.value);
+		localStorage.setItem("age1",age1.value);
+		localStorage.setItem("day1",day1.value);
+		localStorage.setItem("date1",date1.value);
+		localStorage.setItem("time1",time1.value);
+		localStorage.setItem("address1",address1.value);
+	}
+
+	function red(){
+    document.getElementById('back-side').style.backgroundColor="red";
+	}	
+	function blue(){
+    document.getElementById('back-side').style.backgroundColor="blue";
+	}
+	function green(){
+    document.getElementById('back-side').style.backgroundColor="green";
+	}
+	function gold(){
+    document.getElementById('back-side').style.backgroundColor="gold";
+	}
+	function grey(){
+    document.getElementById('back-side').style.backgroundColor="grey";
+	}
+	function purple(){
+    document.getElementById('back-side').style.backgroundColor="magenta";
+	}
+	function white(){
+    document.getElementById('back-side').style.backgroundColor="#f1f1f1";
+	}
+	</script>
+</head>
+<body onload="load()">
+	<!-- <div > -->
+	<div id="left"class="container">
+		<!-- <div class="zero" ></div> -->
+		<!-- <div class="card " > -->
+			<div class="inside">
+<div id="back-side" >
+	<div id="pos">
+	<h1 id="birth" class="abs" contenteditable="true"> Thank you</h1><br>
+	<h3>Dear <input type="text" name="namee" id="dear1" class="abs tes" size="3"><!-- <h1>Happy birthday Party!</h1> --></input> <input id="who1" class="abs tes"contenteditable="true" size="5"></input>,</h3><br>
+	<h3><input id="greating1" class="abs tes"contenteditable="true" size="14" style="text-align: right;"></input>, You are invited to <input id="name1" class="abs tes"contenteditable="true"size="10"></input> birthday party.</h3> 
+	 <br>
+	<h3><input id="secname" class="abs tes"contenteditable="true" size="10"></input> will be turning <input id="age1" class="abs tes"contenteditable="true" maxlength="3" size="3" > this year.</input></h3> <br>
+	<h3>The date of the party is <input id="date1" class="abs tes"contenteditable="true" size="10"></input><input id="day1" class="abs tes"contenteditable="true" size="7"></input> .The birthday celebration will start at <input id="time1" class="abs tes"contenteditable="true" size="6"></input> .</h3> <br>
+	
+	<h3>The location will take place: </h3><textarea rows="7" cols="33"  id="address1" class="abs tes"contenteditable="true"></textarea>. <br>
+	</div>
+	
+<img src="4.png" id="drag3" class="fill" alt="image"></div>
+	</div>
+	</div>
+	<div id="right">
+
+	<div class="choose" id="col"><h1>Background Color:</h1></div><br>
+	<button class="but" onclick="red()" id="red">red</button>
+	<button class="but" onclick="blue()" id="blue">blue</button>
+	<button class="but" onclick="green()" id="green">green</button>
+	<button class="but" onclick="grey()" id="grey">grey</button>
+	<button class="but" onclick="gold()" id="gold">gold</button>
+	<button class="but" onclick="purple()" id="purple">purple</button>
+	<button class="but" onclick="white()" id="white">white</button>
+	<div class="choose" id="fon"><h1>Font:</h1></div><br>
+	<button value="1" onclick="font(this.value);change('Bodoni Moda')" id="bodoni" style="font-family:Bodoni Moda">Bodoni Moda</button>
+	<button value="2" onclick="font(this.value);change('EB Garamond')" id="eb" style="font-family:EB Garamond">EB Garamond</button>
+	<button value="3" onclick="font(this.value);change('Antonio')" id="atonio" style="font-family:Antonio">Atonio</button>
+	<button value="4" onclick="font(this.value);change('Arial')" id="arial" style="font-family:Arial">Arial</button>
+	<button value="5" onclick="font(this.value);change('Times New Roman')" id="roman" style="font-family:Times New Roman">Times New Roman</button>
+	<a href="formal_lay_one.html" id="back"><input type="button" name="back"class="but" id="backs"  value="back" ></a>
+	<button class="but" onclick="save()" id="save">Save</button>
+	<button class="but" onclick="submit()" id="submit">submit</button>
+	</div></body>
+</html>

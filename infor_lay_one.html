@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			background-color: #87cefa;
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-areas: 
+			"lefts rights"
+		}
+		
+		#container{width:800px;margin:0 auto;
+			display: grid;
+			grid-template-columns: 200px 1fr 1fr;
+			grid-auto-rows:70px;
+			grid-row-gap: 1em;
+			align-items: center;}
+
+ 		
+		.text{padding:10px; width:45%;}
+		span.errors{display:none;}
+		div.results{width:800px;margin:0 auto;display: grid;grid-auto-rows:70px;}
+
+		#left{
+			grid-area:lefts;
+		}
+		#right{
+			grid-area:rights;
+		}
+
+	</style>
+	<script type="text/javascript">
+		
+			function load(){
+
+	var firstname =document.getElementById("firstnames");
+	var ages = document.getElementById("ages");
+	var days = document.getElementById("days");
+	var dates = document.getElementById("dates");
+	var times = document.getElementById("times");
+	var secrets =document.getElementById("secrets");
+
+			
+			
+			firstname.value=localStorage.getItem("firstnames1");
+			ages.value=localStorage.getItem("ages1");
+			days.value=localStorage.getItem("days1");
+			dates.value=localStorage.getItem("dates1");
+			times.value=localStorage.getItem("times1");
+			secrets.value=localStorage.getItem("secrets1");
+		}
+		
+		
+		function checkFom(){
+			
+	var firstname =document.getElementById("firstnames");
+	var ages = document.getElementById("ages");
+	var days = document.getElementById("days");
+	var dates = document.getElementById("dates");
+	var times = document.getElementById("times");
+	var secrets =document.getElementById("secrets");
+
+
+	localStorage.setItem("firstnames",firstname.value);
+	localStorage.setItem("ages",ages.value);
+	localStorage.setItem("days",days.value);
+	localStorage.setItem("dates",dates.value);
+	localStorage.setItem("times",times.value);
+	localStorage.setItem("secrets",secrets.value);
+	
+	
+
+
+		}
+		
+
+
+
+
+		
+	</script>
+</head>
+<body>
+	<div id="left">
+<!-- <form id="myForm"> -->
+<div id="container">
+
+<header style="grid-row: 1;grid-column: 1/4"><h1 >Design your Birthday card</h1></header>
+<label for="firstname" style="grid-column:1/2">Birthday name Firstname</label>
+<input type="text" name="firstnames" id="firstnames" class="text" style="grid-column:2/4">
+
+
+<label for="age" style="grid-column:1/2">Age will be</label>
+<input type="number" name="age" id="ages" class="text" style="grid-column:2/4">
+
+<label for="day" style="grid-column:1/2">Day</label>
+<input type="text" name="day" id="days" class="text" style="grid-column:2/4">
+<label for="date">Date</label>
+		<input type="date" name="date" id="dates" class="text"style="grid-column:2/4">
+		
+		<label for="time">Time</label>
+		<input type="time" name="time" id="times" class="text"style="grid-column:2/4">
+		
+
+<label>address</label>
+<textarea rows="4" cols="20" id="secrets"></textarea>
+
+<!-- <form  action="informal_one.html"> -->
+	<button onclick="load()" style="grid-column:1/2; width:50%" >load</button>
+<button style="grid-column:2/3;width:20%" onclick="checkFom()" ><a href="informal_one.html">Preview</a></button>
+<!-- </form> -->
+<!-- <input type="reset" name="reset" value="Clear"style="grid-column:3/4;width:50%"> -->
+</div>
+ </div>
+ <div id="right"></div>
+<!-- </form> -->
+</body>
+
+</html>
